@@ -112,14 +112,11 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.size() > 0 ) {
             for (HashMap<String, String> field : someJobs) {
-
                 for(Map.Entry<String, String> data: field.entrySet()){
-                    System.out.println(data.getKey() + ": "+data.getValue() );
-
+                    System.out.println(data.getKey() + ": "+data.getValue());
                 }
-                System.out.println("*********************");
+                System.out.println("*****");
             }
-
         } else System.out.println("There are 0 matches for this search.");
     }
 }
