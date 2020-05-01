@@ -77,8 +77,8 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
-
-            if (aValue.contains(value)) {
+//I changed line 81 so that when choosing Search and then a field aside from All, it would work correctly
+            if (aValue.toLowerCase().contains(value)) {
                 jobs.add(row);
             }
         }
