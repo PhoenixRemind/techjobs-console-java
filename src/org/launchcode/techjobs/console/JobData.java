@@ -129,22 +129,19 @@ public class JobData {
 
     public static ArrayList<HashMap<String, String>> findByValue(String searchTerm){
 
-        ArrayList<HashMap<String, String>> searchJobs = JobData.findAll();
-        ArrayList<HashMap<String, String>> searchResult = new ArrayList<>();
+        loadData();
 
-        for (HashMap<String,String> row: searchJobs){
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-            for(Map.Entry<String, String> column: row.entrySet()){
-                if (column.getValue().contains(searchTerm)){
-
-                    if(Arrays.asList(searchResult).contains(row)){
-                        continue;
-                    }
-                    searchResult.add(row);
+        for (HashMap<String, String> row : allJobs){
+            for (String fields : row.values()) {
+                if (fields.toLowerCase().contains(searchTerm)){
+                    jobs.add(row);
+                    break; // prevents duplicates from showing up in the array list
                 }
             }
         }
-        return searchResult;
+        return jobs;
     }
 
 }
