@@ -112,6 +112,7 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        //Loops through everything in someJobs
         if (someJobs.size() > 0 ) {
             for (HashMap<String, String> field : someJobs) {
                 System.out.println("*****");

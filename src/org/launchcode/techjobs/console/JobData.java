@@ -128,14 +128,17 @@ public class JobData {
     }
 
     public static ArrayList<HashMap<String, String>> findByValue(String searchTerm){
-
+        //Loads the CSV file
         loadData();
-
+        //Holds jobs that match search term
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        //Loops through the entire list of jobs
         for (HashMap<String, String> row : allJobs){
+            //nested loop to look for match to search term and grab row of valid search
             for (String fields : row.values()) {
                 if (fields.toLowerCase().contains(searchTerm)){
+                    //adds job if search term matches
                     jobs.add(row);
                     break; // prevents duplicates from showing up in the array list
                 }
